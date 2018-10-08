@@ -25,7 +25,7 @@ namespace TestWebApp.Controllers
             if (userExists == 0)
             {
                 context.RegisterNewUser(user);
-                return View();
+                return RedirectToAction("LI_index", "Page");
 
             }
             return View();
