@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="">
+    <meta name="Delano Koster" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+    <title>MOLL | find the service you want!</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="~/css/style_index.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/uikit.css" rel="stylesheet" />
+    <link href="~/css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)" />
+    <link href="~/css/bootstrap-custom.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar-top" table-responsive>
+        <a asp-page="/Index"><img src="~/images/img_molllogo.png" /></a>
+        <table>
+            <tbody>
+                <tr>
+                    <td id="navtd1">
+                        <ul>
+                            <li>
+                                <a asp-action="#" asp-controller="Page">Logged in!</a>
+                            </li>
+                        </ul>
+                    </td>
+                    <td id="navtd2">
+                        <ul>
+                            <li>
+                                
+
+                            </li>
+                        </ul>
+                    </td>
+                    <td id="navtd3">
+
+                        
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="totalnav">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark static-top">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item" href="#">Hand Made</a>
+                            <a class="dropdown-item" href="#">IT-Services</a>
+                            <a class="dropdown-item" href="#">Game Services</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a id="wishlist" class="nav-link" href="#">Wish list</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="myaccount" class="nav-link" href="#">My Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="shoppingcart" class="nav-link" href="#">Shopping Cart</a>
+                    </li>
+                    <!--<li class="nav-item">
+                       <a class="nav-link disabled" href="#">Disabled</a>
+                       </li>-->
+
+                </ul>
+                <form id="searchbar" method="get" action="/search" id="search">
+                    <input name="q" type="text" size="40" placeholder="Search service..." />
+                </form>
+            </div>
+        </nav>
+    </div>
+
+    <partial name="_CookieConsentPartial" />
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; 2018 - M.O.L.L. - Marketplace Of Labour</p>
+        </footer>
+    </div>
+
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

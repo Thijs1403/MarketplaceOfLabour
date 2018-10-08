@@ -1,0 +1,88 @@
+﻿@model TestWebApp.Models.LoginModel
+
+@{
+    Layout = "/Pages/Shared/_Login.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<head>
+    <title>MOLL | Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/login_body.css">
+    <link href="~/css/uikit.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+</head>
+<body bgcolor="#f4f4f4">
+    <div id="menu_underheader">
+        <h1>Login | Please fill in your details below</h1>
+    </div>
+
+    <div id="section_form">
+        <img id="circlelogo" src="~/images/img_loginLogo.png" />
+        <div id="rectangle">
+
+            <div class="registrationform">
+                <form asp-action ="Login" method="post">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>Email</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    &nbsp;<label for="email"><b></b></label>
+                                    <input asp-for="EmailAddress" type="text" placeholder="Email Address" name="EmailAddress" pattern="a-z0-9._%+-]+a-z0-9.-]+\.[a-z]{2,3}$" title="Email must follow following example: example.example.com" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Password</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    &nbsp;<label for="password"><b></b></label>
+                                    <input asp-for="Password" type="password" placeholder="Password" name="Password" minlength="4" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 4 or more characters." oninput="document.getElementById('confirm').pattern = this.value.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&')" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="tdforgotpass">
+                                    <a asp-action="ForgotPassword" asp-controller="Page" id="forgotpass">Forgot Password</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><button type="submit">LOGIN</button></td>
+                            </tr>
+                            <tr>
+                                <td id="tdnoaccount">
+                                    <a asp-action="Register" asp-controller="Page">Don't have an account? Sign Up</a>
+
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <form action="action_page.php" style="border:1px solid #ccc">
+        <div class="container2">
+        </div>
+    </form>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
